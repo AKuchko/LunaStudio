@@ -1,17 +1,7 @@
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  esbuild: {
-    jsxFactory: 'create',
-    jsxInject: 'import { create } from "../util/createComponent.js"'
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'views/index.html'),
-        second: resolve(__dirname, 'src/pages/second.html')
-      },
-    },
-  },
+  plugins: [vue()],
 })
